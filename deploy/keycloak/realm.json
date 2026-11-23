@@ -1,0 +1,31 @@
+{
+  "realm": "ledger",
+  "enabled": true,
+  "displayName": "Ledger local identity broker",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "clients": [
+    {
+      "clientId": "ledger-web",
+      "name": "Ledger Web",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "local-dev-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/api/auth/callback/enterprise-sso"],
+      "webOrigins": ["http://localhost:3000"],
+      "protocol": "openid-connect",
+      "defaultClientScopes": ["web-origins", "acr", "roles", "profile", "email", "groups"]
+    }
+  ],
+  "groups": [
+    { "name": "ledger-owners" },
+    { "name": "ledger-admins" },
+    { "name": "pmo-leads" },
+    { "name": "project-managers" },
+    { "name": "ledger-contributors" },
+    { "name": "ledger-viewers" },
+    { "name": "internal-audit" }
+  ]
+}
